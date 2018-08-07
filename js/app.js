@@ -1,3 +1,4 @@
+const MODAL = document.getElementById('myModal');
 //Assign the player's original position
 const RENDER_AT_POSITION = (x,y) => [x * 101, y * 83-15];
 
@@ -92,7 +93,7 @@ class Player {
 
     //This function checks, if Player reaches the goal
     checkReach(){
-    	if (this.y === 0) console.log("win");
+    	if (this.y === 0) winMessage();
     }
 
 	/*
@@ -127,6 +128,17 @@ class Player {
 	};
 }
 
+// ** Modal events **
+//shows the winmessage modal.
+ function winMessage() {
+ 	MODAL.style.display = 'block';
+ }
+
+//Close the winmessage modal.
+ function closeModal() {
+ 	MODAL.style.display = 'none';
+ 	RESET();
+ }
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
@@ -171,3 +183,6 @@ document.addEventListener('keydown', function(e){
 		e.preventDefault();
 	}
 })
+
+//Modal event listeners
+document.getElementById('reStart').addEventListener('click', closeModal);
