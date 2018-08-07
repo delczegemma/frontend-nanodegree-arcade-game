@@ -9,7 +9,8 @@ class Enemy {
 
 	    //Set enemy initial location
         this.x=-1;
-        this.y = 2;
+        //Randomize the enemy startpoint in the grey field
+		this.y = Math.floor(Math.random() * 3 + 1);
 
         //Initialize enemy speed
 		this.s = (Math.random() * 13 + 1)/2;
