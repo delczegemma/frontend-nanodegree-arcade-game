@@ -1,6 +1,15 @@
 //Assign the player's original position
 const RENDER_AT_POSITION = (x,y) => [x * 101, y * 83-15];
 
+//Reset the game
+/**
+*TODO: Here we can implement life's decremntation and handeling game over event.
+* That is, why it is a separate function from START_GAME().
+**/
+const RESET = function(){
+	START_GAME();
+}
+
 // Enemies our player must avoid
 class Enemy {
     constructor() {
@@ -74,7 +83,7 @@ class Player {
     	for(const ENEMY of allEnemies){
     		if(ENEMY.y === this.y && Math.abs(this.x - ENEMY.x)< R){
     			coll=true;
-    			console.log("collision happened");
+    			RESET();
     		}
     	}
     	return coll;
@@ -133,7 +142,7 @@ const START_GAME = (function(global){
 	}
 }
 )(this);
-
+START_GAME(this);
 
 
 
