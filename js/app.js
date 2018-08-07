@@ -158,3 +158,10 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+//Prevent scrolling the screen while playing
+document.addEventListener('keydown', function(e){
+	if ([37,38,39,40].includes(e.keyCode)){
+		e.preventDefault();
+	}
+})
