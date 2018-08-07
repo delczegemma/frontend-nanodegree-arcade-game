@@ -115,14 +115,24 @@ class Player {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-let player = new Player ();
+// Start the game
+const START_GAME = (function(global){
+	// Now instantiate your objects.
+	// Place the player object in a variable called player
+	return function(){
+		global.player = new Player ();
 
-let allEnemies = [];
-let addEnemies = function add (){
-	allEnemies.push(new Enemy);
-	setTimeout(add, Math.random() * 2500);
+		// Place all enemy objects in an array called allEnemies
+		global.allEnemies = [];
+
+		let addEnemies = function add (){
+			allEnemies.push(new Enemy);
+			setTimeout(add, Math.random() * 2500);
+		}
+		addEnemies();
+	}
 }
-addEnemies();
+)(this);
 
 
 
