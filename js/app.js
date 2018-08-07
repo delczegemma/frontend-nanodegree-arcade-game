@@ -64,7 +64,12 @@ class Player {
 // Place the player object in a variable called player
 let player = new Player ();
 
-let allEnemies = [new Enemy];
+let allEnemies = [];
+let addEnemies = function add (){
+	allEnemies.push(new Enemy);
+	setTimeout(add, Math.random() * 2500);
+}
+addEnemies();
 
 
 
