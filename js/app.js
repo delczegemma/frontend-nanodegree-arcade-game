@@ -65,6 +65,34 @@ class Player {
 
     	ctx.drawImage(Resources.get(this.sprite), ...RENDER_AT_POSITION(this.x,this.y));
 	}
+
+	//Handles the input for the player to move. The branches are preventing the player to move off-screen
+	handleInput(direction){
+		switch (direction){
+			case 'left':
+				if (this.x>=1){
+					this.x--
+				}
+				break;
+			case 'up':
+				if (this.y>=1){
+					this.y--;
+				}
+				break;
+			case 'right':
+				if (this.x<4){
+					this.x++;
+				}
+				break;
+			case 'down':
+				if (this.y<5){
+					this.y++;
+				}
+				break;
+			default:
+			break;
+		}
+	};
 }
 
 // Now instantiate your objects.
