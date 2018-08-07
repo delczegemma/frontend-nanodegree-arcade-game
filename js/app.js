@@ -1,8 +1,15 @@
+//Assign the player's original position
+const RENDER_AT_POSITION = (x,y) => [x * 101, y * 83-15];
+
 // Enemies our player must avoid
 class Enemy {
     constructor() {
 	    // Variables applied to each of our instances go here,
 	    // we've provided one for you to get started
+
+	    //Set enemy initial location
+        this.x=-1;
+        this.y = 2;
 
 	    // The image/sprite for our enemies, this uses
 	    // a helper we've provided to easily load images
@@ -18,7 +25,7 @@ class Enemy {
 	// Draw the enemy on the screen, required method for game
 	render() {
 
-    	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    	ctx.drawImage(Resources.get(this.sprite), ...RENDER_AT_POSITION(this.x,this.y));
 	}
 }
 
@@ -27,11 +34,10 @@ class Enemy {
 // a handleInput() method.
 class Player {
     constructor() {
-	    // Variables applied to each of our instances go here,
-	    // we've provided one for you to get started
+    	//Set Player initial location
+    	this.x = 2;
+    	this.y = 5;
 
-	    // The image/sprite for our enemies, this uses
-	    // a helper we've provided to easily load images
 	    this.sprite = "images/char-boy.png";
 	}
 
@@ -44,7 +50,7 @@ class Player {
 	// Draw the enemy on the screen, required method for game
 	render() {
 
-    	ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    	ctx.drawImage(Resources.get(this.sprite), ...RENDER_AT_POSITION(this.x,this.y));
 	}
 }
 
