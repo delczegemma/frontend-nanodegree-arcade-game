@@ -57,7 +57,7 @@ class Player {
 	// Update the enemy's position, required method for game
 	// Parameter: dt, a time delta between ticks
 	update() {
-
+		this.checkCollisions();
 	}
 
 	// Draw the enemy on the screen, required method for game
@@ -66,7 +66,24 @@ class Player {
     	ctx.drawImage(Resources.get(this.sprite), ...RENDER_AT_POSITION(this.x,this.y));
 	}
 
-	//Handles the input for the player to move. The branches are preventing the player to move off-screen
+	//*** Helper functions for the player***
+    //Check, if one Enemy hit the Player and handles, what happens then
+    checkCollisions(){
+    	let coll = false;
+    	const R = .7;
+    	for(const ENEMY of allEnemies){
+    		if(ENEMY.y === this.y && Math.abs(this.x - ENEMY.x)< R){
+    			coll=true;
+    			console.log("collision happened");
+    		}
+    	}
+    	return coll;
+    }
+
+	/*
+	*Handles the input for the player to move.
+	*The branches are preventing the player to move off-screen
+	*/
 	handleInput(direction){
 		switch (direction){
 			case 'left':
