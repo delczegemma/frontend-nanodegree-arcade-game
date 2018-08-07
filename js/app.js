@@ -25,6 +25,8 @@ class Enemy {
 	update(dt) {
 		//Set enemy speed
     	this.x += this.s*dt;
+
+    	this.checkOutside();
 	}
 
 	// Draw the enemy on the screen, required method for game
@@ -32,6 +34,12 @@ class Enemy {
 
     	ctx.drawImage(Resources.get(this.sprite), ...RENDER_AT_POSITION(this.x,this.y));
 	}
+	//Remove passed bugs from the array
+    checkOutside(){
+    	if (this.x >= 6) {
+    		allEnemies.splice(allEnemies.indexOf(this),1);
+    	}
+    }
 }
 
 // Now write your own player class
