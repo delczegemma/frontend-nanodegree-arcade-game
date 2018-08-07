@@ -1,6 +1,31 @@
-frontend-nanodegree-arcade-game
+#Frontend Nanodegree Arcade Game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## Table of Contents
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+* [Description](#description)
+* [Instructions](#instructions)
+* [How to Play](#how-to-play)
+* [Resources](#resources)
+* [Contributing](#contributing)
+
+## Description
+This Arcade Game is built as a project for the Udacity Front End Developer Nanodegree Program. This game is based on a frogger-game concept and written in HTML, CSS and object-oriented vanilla JavaScript. 
+
+## Instructions
+
+This game can played on any device but a browser is required. You can reach the page from [this GitHub Page](https://delczegemma.github.io/frontend-nanodegree-arcade-game/)
+
+## How to Play
+This game is an online version of a basic, single player frogger game. You can move your player with the arrow buttons on the game field. Be careful on the street not to be hit by the enemy bugs. If a bug catches the player, he dies and you can start the game from he beginning. If the player reaches the see, you won. After winmessage you can start the game again, if you would like. 
+
+
+## Resources
+- The gamefield canvas and starter code is given in a [Udacity repository](https://github.com/udacity/frontend-nanodegree-arcade-game).
+
+
+## Contributing
+
+This repository is an Udacity Project. Therefore, we most likely will not accept pull requests.
+
+For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
