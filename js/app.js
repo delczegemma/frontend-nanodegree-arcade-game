@@ -25,7 +25,7 @@ class Enemy {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-class Enemy {
+class Player {
     constructor() {
 	    // Variables applied to each of our instances go here,
 	    // we've provided one for you to get started
@@ -51,6 +51,10 @@ class Enemy {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
+let player = new Player ();
+
+let allEnemies = [new Enemy];
+
 
 
 
