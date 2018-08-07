@@ -11,6 +11,9 @@ class Enemy {
         this.x=-1;
         this.y = 2;
 
+        //Initialize enemy speed
+		this.s = (Math.random() * 13 + 1)/2;
+
 	    // The image/sprite for our enemies, this uses
 	    // a helper we've provided to easily load images
 	    this.sprite = 'images/enemy-bug.png';
@@ -19,7 +22,8 @@ class Enemy {
 	// Update the enemy's position, required method for game
 	// Parameter: dt, a time delta between ticks
 	update(dt) {
-
+		//Set enemy speed
+    	this.x += this.s*dt;
 	}
 
 	// Draw the enemy on the screen, required method for game
