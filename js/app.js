@@ -67,6 +67,7 @@ class Player {
 	// Parameter: dt, a time delta between ticks
 	update() {
 		this.checkCollisions();
+		this.checkReach();
 	}
 
 	// Draw the enemy on the screen, required method for game
@@ -87,6 +88,11 @@ class Player {
     		}
     	}
     	return coll;
+    }
+
+    //This function checks, if Player reaches the goal
+    checkReach(){
+    	if (this.y === 0) console.log("win");
     }
 
 	/*
